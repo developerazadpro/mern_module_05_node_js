@@ -9,6 +9,12 @@ let server = http.createServer(function (req, res){
             res.write(data)
             res.end();
         })
+    }else if(req.url == '/about'){
+        // Synchronous process
+        let data = fs.readFileSync('about.html');
+        res.writeHead(200, {'Content-Type': 'text/html'})
+        res.write(data)
+        res.end();
     }
 })
 
