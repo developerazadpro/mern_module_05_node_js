@@ -1,0 +1,1 @@
+Welcome node js fs write sync method

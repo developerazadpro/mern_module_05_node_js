@@ -88,8 +88,30 @@ let server = http.createServer(function (req, res){
             res.write('File delete success')
             res.end();
         }
-    }else if(req.url == '/exist'){
-
+    }else if(req.url == '/exists'){
+        // Async
+        /*fs.exists('demo.txt', function (result){
+            if(result){
+                res.writeHead(200, {'Content-Type': 'text/html'})
+                res.write('File exist')
+                res.end();
+            }else{
+                res.writeHead(200, {'Content-Type': 'text/html'})
+                res.write('File does not exist')
+                res.end();
+            }
+        })*/
+        // Sync
+        let result = fs.existsSync('demo2.txt');
+        if(result){
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write('File exist')
+            res.end();
+        }else{
+            res.writeHead(200, {'Content-Type': 'text/html'})
+            res.write('File does not exist')
+            res.end();
+        }
     }
 })
 
