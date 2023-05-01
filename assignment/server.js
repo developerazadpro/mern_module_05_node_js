@@ -4,26 +4,18 @@ const port = 3000;
 
 let server = http.createServer( (req, res) => {
     if(req.url == '/'){
-        // fs read file Synchronous process
-        const data = fs.readFileSync('public/home.html');
-        res.writeHead(200, {'Content-Type': 'text/html'})
-        res.write(data)
-        res.end();
+        // fs read file Sync
+        let data = fs.readFileSync('public/home.html', 'utf-8');
+        res.end(data);
     }else if(req.url == '/about'){
-        const data = fs.readFileSync('public/about.html');
-        res.writeHead(200, {'Content-Type': 'text/html'})
-        res.write(data)
-        res.end();
+        let data = fs.readFileSync('public/about.html', 'utf-8');
+        res.end(data);
     }else if(req.url == '/contact'){
-        const data = fs.readFileSync('public/contact.html');
-        res.writeHead(200, {'Content-Type': 'text/html'})
-        res.write(data)
-        res.end();
+        let data = fs.readFileSync('public/contact.html', 'utf-8');
+        res.end(data);
     }else{
-        let data = fs.readFileSync('public/404.html');
-        res.writeHead(200, {'Content-Type': 'text/html'})
-        res.write(data)
-        res.end();
+        let data = fs.readFileSync('public/404.html', 'utf-8');
+        res.end(data);
     }
 })
 
