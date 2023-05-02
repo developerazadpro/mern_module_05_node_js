@@ -44,4 +44,11 @@ let urlServer = http.createServer(function (req, res){
 
 
 urlServer.listen(5000);
-console.log("Server Run Success")
+console.log("Server Run Success");
+
+// debug
+// var a = 10;
+// var b = 20;
+// var c;
+// var abc = a + b + c;
+// console.log(abc);
